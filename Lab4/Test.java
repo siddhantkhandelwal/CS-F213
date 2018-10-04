@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Test{
 	public static Student readStudent() throws IOException{
 		/* This method reads the student details and returns the Student instance.
@@ -6,6 +7,11 @@ class Test{
 		 Student, 4. Name format (1 for comma(,) separated and 2 for semicolon
 		separated), 5. age of student
 		*/
+
+		Scanner sc = new Scanner(System.in)
+		Student std = new Student(sc.nextLine(), sc.nextInt());
+		return std;
+		}
 
 	} // End of readStudent() Method
 	public static void main(String args[]) throws IOException{

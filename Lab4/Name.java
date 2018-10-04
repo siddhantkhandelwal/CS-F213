@@ -17,6 +17,7 @@ class Name {
  	public String getName(){
  		return fname + ' ' + mname + ' ' + lname;
  	}
+
  Name(String name) {
  /* Complete the constructor by extracting the values of three name
  fields. Note that name value may be either comma separated or
