@@ -13,4 +13,12 @@ class Stats<T extends Number> {
 		}
 		return sum / nums.length;
 	}
+
+	boolean sameAvg(Stats<?> ob) {
+		if(this.average() == ob.average()) {
+			return true;
+		}
+
+		return false;
+	}
 }
