@@ -6,7 +6,6 @@ public class SwingJTextFieldDemo {
     public SwingJTextFieldDemo() {
         JFrame jfrm = new JFrame("SwingJTextFieldDemo");
 
-
         jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jfrm.setSize(260, 120);
 
