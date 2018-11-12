@@ -138,6 +138,7 @@ class Customer {
 			}
 		});
 
+
 		editbtn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 
@@ -189,6 +190,24 @@ class Customer {
 		});
 	}
 
+	deletebtn.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent ae) {
+			String delete_id = tf5.getText();
+			try {
+				Connection con = getConnection();
+				PreparedStatement st = con.prepareStatement(
+					"delete from CUSTOMER_INFO where CUSTOMER_ID = ?");
+				st.setInt(1, Integer.parseInt(delete_id));
+				st.executeUpdate();
+				JOptionPane.showMessageDialog(p3, "Data was successfully deleted from the database.");
+			} catch (ClassNotFoundException e) {
+				JOptionPane.showMessageDialog(p3, "Error in deleting data!");	
+			} catch (SQLException ex) {
+				Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+	});
+
 	void dis() {
 		f.getContentPane().add(tp);
 		tp.addTab("Add Record", p1);
@@ -237,5 +256,4 @@ class Customer {
 		Statement stmt = con.createStatement();
 		stmt.executeUpdate(createString);
 	}
-
 }
